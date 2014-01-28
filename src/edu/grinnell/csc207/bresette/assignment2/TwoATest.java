@@ -1,5 +1,5 @@
 package edu.grinnell.csc207.bresette.assignment2;
-
+import java.util.Random;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -81,7 +81,21 @@ public class TwoATest
   public void
     testReverseInts ()
   {
-    fail ("Not yet implemented");
+    Random r = new Random(); 
+  
+    
+    for(int i = 0; i < 100; i++)
+      {
+        int length = r.nextInt (60); 
+        int[] values = new int[length];
+        for (int j = 0; j < length; j++)
+          {
+            values[j] = r.nextInt(70); 
+          }
+        TwoA.reverseInts(values);
+        TwoA.reverseInts(values);
+        assertArrayEquals("Testing if reversed twice " + values + " = " + values, values, values);
+      }
   }
 
 }

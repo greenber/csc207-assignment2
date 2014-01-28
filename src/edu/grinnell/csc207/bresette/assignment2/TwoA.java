@@ -1,6 +1,5 @@
 package edu.grinnell.csc207.bresette.assignment2;
 
-
 public class TwoA
 {
   public static void
@@ -15,10 +14,17 @@ public class TwoA
     TwoA.reverseInts (values);
     for (int i = 0; i < values.length; i++)
       {
-        System.out.print (" " + values[i]);
+        System.out.println (" " + values[i]);
       }
+    System.out.println(TwoA.average (-4, -5));
 
   }
+
+  public static int
+    average (int left, int right)
+  {
+    return (left + right) / 2;
+  } // average(int,int)
 
   public static boolean
     isMultiple (long a, long b)
@@ -79,7 +85,7 @@ public class TwoA
     return true;
   } // isDistinct
 
-  public static int[]
+  public static void
     reverseInts (int[] ints)
   {
     int length = ints.length;
@@ -90,7 +96,5 @@ public class TwoA
         ints[i] = ints[(length - 1) - i];
         ints[(length - 1) - i] = temp;
       }
-
-    return ints;
   }// reverseInts
 }
