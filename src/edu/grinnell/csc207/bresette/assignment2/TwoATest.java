@@ -75,10 +75,11 @@ public class TwoATest {
 			for (int j = 0; j < length; j++) {
 				values[j] = r.nextInt(Integer.MAX_VALUE);
 			}
+			int[] control = values.clone();
 			TwoA.reverseInts(values);
 			TwoA.reverseInts(values);
 			assertArrayEquals("Testing if reversed twice " + values + " = "
-					+ values, values, values);
+					+ control, control, values);
 		}
 	}
 
