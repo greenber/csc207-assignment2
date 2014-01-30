@@ -16,6 +16,11 @@ public class Rational
   {
     // stub
   } //Rational (double)
+  public Rational (String val)
+  {
+    // stub
+  } //Rational (string)
+  
 
   // +----------+---------------------------------------------------------
   // | Observers |
