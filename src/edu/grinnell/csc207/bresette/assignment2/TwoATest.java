@@ -5,7 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TwoATest {
-
+	
+	/*
+	 * Tests isMultiple by iterating through the multiples of 13 and (multiples
+	 * of 13) - 1
+	 */
 	@Test
 	public void testIsMultiple() {
 		for (int i = 0; i < 10000; i += 13) {
@@ -14,8 +18,11 @@ public class TwoATest {
 			assertEquals("Testing " + (i - 1) + " is not a multiple of 13",
 					false, TwoA.isMultiple(i - 1, 13));
 		}
-	}
+	} // testIsMultiple()
 
+	/*
+	 * Tests isOdd by iterating through odd and even numbers less than 10000
+	 */
 	@Test
 	public void testIsOdd() {
 		for (int i = 1; i < 10000; i += 2) {
@@ -23,7 +30,11 @@ public class TwoATest {
 			assertEquals("Testing " + (i - 1) + " is even", false,
 					TwoA.isOdd(i - 1));
 		}
-	}
+	} // testIsOdd()
+
+	/*
+	 * Tests oddSumTo by iterating through sums of odd numbers
+	 */
 
 	@Test
 	public void testOddSumTo() {
@@ -36,8 +47,12 @@ public class TwoATest {
 					sum, TwoA.oddSumTo(i - 1));
 			sum += i;
 		}
-	}
+	} // testOddSumTo()
 
+	/*
+	 * Tests isOddProduct by incrementing the element at index 2. When it is odd
+	 * there is an odd product.
+	 */
 	@Test
 	public void testIsOddProduct() {
 		int[] vals = { 1, 2, 1, 4 };
@@ -49,7 +64,12 @@ public class TwoATest {
 			assertEquals("Testing " + i + "in isOddProduct", false,
 					TwoA.isOddProduct(vals));
 		}
-	}
+	} // testIsOddProduct()
+
+	/*
+	 * Tests isDistinct by initializing the array incrementing the element at
+	 * index 0 by 1. The element will always match another in the array.
+	 */
 
 	@Test
 	public void testIsDistinct() {
@@ -63,7 +83,12 @@ public class TwoATest {
 			assertEquals("Elements not distinct because " + i
 					+ " appears more than once", false, TwoA.isDistinct(vals));
 		}
-	}
+	} // testIsDistinct()
+
+	/*
+	 * Tests reverseInts by reversing random arrays twice and comparing it to
+	 * the original values.
+	 */
 
 	@Test
 	public void testReverseInts() {
@@ -81,6 +106,6 @@ public class TwoATest {
 			assertArrayEquals("Testing if reversed twice " + values + " = "
 					+ control, control, values);
 		}
-	}
+	} // testReverseInts()
 
-}
+}//Class TwoATest
