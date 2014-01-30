@@ -2,36 +2,53 @@ package edu.grinnell.csc207.bresette.assignment2;
 
 public class TwoA {
 	public static void main(String[] args) {
-		System.out.println(TwoA.isMultiple(56, 56));
-		System.out.println(TwoA.isOdd(5));
-		System.out.println(TwoA.oddSumTo(7));
-		int[] values = { 1, 3, 4, 5 };
-		System.out.println(TwoA.isOddProduct(values));
-		System.out.println(TwoA.isDistinct(values));
-		TwoA.reverseInts(values);
-		for (int i = 0; i < values.length; i++) {
-			System.out.println(" " + values[i]);
-		}
-		System.out.println(TwoA.average(-102, 103));
 
 	}
 
-	public static int average(int left, int right) {
-		return (left + right) / 2;
-	} // average(int,int)
-
+	/**
+	 * Finds out if the values are multiplies of each other. v
+	 * 
+	 * @param a
+	 *            : A long integer
+	 * @param b
+	 *            A long integer
+	 * @return A integer
+	 */
 	public static boolean isMultiple(long a, long b) {
 		return ((a % b) == 0);
 	} // isMultiple
+
+	/**
+	 * finds in the input is odd
+	 * 
+	 * @param i
+	 *            : Takes an integer
+	 * @return A boolean
+	 */
 
 	public static boolean isOdd(int i) {
 		return (i & 1) == 1;
 	} // isOdd
 
+	/**
+	 * Finds the sum of all odd numbers
+	 * 
+	 * @param n
+	 *            : Takes an integer
+	 * @return : an integer
+	 */
+
 	public static int oddSumTo(int n) {
 		return ((n / 2) * (n / 2));
-	}
+	}// oddSumTo
 
+	/**
+	 * Finds if there is a odd product
+	 * 
+	 * @param ints
+	 *            : An array of integers
+	 * @return: A boolean
+	 */
 	public static boolean isOddProduct(int[] ints) {
 		int odd = 0;
 		for (int i = 0; i < ints.length; i++) {
@@ -45,6 +62,13 @@ public class TwoA {
 		return false;
 	}// isOddProduct
 
+	/**
+	 * Find if there is all distinct values
+	 * 
+	 * @param ints
+	 *            : an array of integers
+	 * @return: A boolean
+	 */
 	public static boolean isDistinct(int[] ints) {
 		for (int i = 0; i < ints.length; i++) {
 			for (int j = i + 1; j < ints.length; j++) {
@@ -55,6 +79,10 @@ public class TwoA {
 		}
 		return true;
 	} // isDistinct
+	/*
+	 * Reverse an array Param ints: an array of ints returns: nothing Calls for
+	 * a side effect
+	 */
 
 	public static void reverseInts(int[] ints) {
 		int length = ints.length;
@@ -65,4 +93,5 @@ public class TwoA {
 			ints[(length - 1) - i] = temp;
 		}
 	}// reverseInts
+
 }
